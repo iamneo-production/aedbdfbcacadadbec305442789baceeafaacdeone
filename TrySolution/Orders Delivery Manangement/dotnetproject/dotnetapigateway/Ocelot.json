@@ -1,0 +1,60 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/Order",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7214
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Order",
+            "UpstreamHttpMethod": ["POST", "GET"],
+            "DownstreamHttpVersion": "2.0",
+            "DangerousAcceptAnyServerCertificate": false
+        },
+        {
+            "DownstreamPathTemplate": "/api/Order/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7214
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Order/{id}",
+            "UpstreamHttpMethod": ["DELETE", "GET"],
+            "DownstreamHttpVersion": "2.0",
+            "DangerousAcceptAnyServerCertificate": false
+        },
+        {
+            "DownstreamPathTemplate": "/api/Delivery",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 6200
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Delivery",
+            "UpstreamHttpMethod": ["POST", "GET"],
+            "DownstreamHttpVersion": "2.0",
+            "DangerousAcceptAnyServerCertificate": false
+        },
+        {
+            "DownstreamPathTemplate": "/api/Delivery/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 6200
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Delivery/{id}",
+            "UpstreamHttpMethod": ["DELETE"],
+            "DownstreamHttpVersion": "2.0",
+            "DangerousAcceptAnyServerCertificate": false
+        }
+    ]
+}
